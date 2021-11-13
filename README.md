@@ -1,3 +1,3 @@
 # golden-ratio-sizing
 
-Membantu menentukan ukuran font dengan golden ratio
+Membantu menentukan ukuran dengan golden ratio
