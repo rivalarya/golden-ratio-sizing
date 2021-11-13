@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tentukan Ukuran Selanjutnya Dengan Golden Ratio</title>
+</head>
+	<style>
+	body{
+		overflow: hidden;
+	}
+	div{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: grey;
+	}
+	main{
+		display: flex;
+		height: 100vh;
+		background-color: grey;
+	}
+	.inline{
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 30px;
+	}
+	input{
+		margin: 0 20px;
+		width: 140px;
+		height: 20px;
+		padding: 5px;
+
+	}
+	p{
+		width: 180px;
+	}
+	textarea{
+		text-align: center;
+	}
+	#hasil{
+		background-color: white;
+	}
+	footer{
+		position: absolute;
+		bottom: 0;
+		margin-left: 48%;
+	}
+	</style>
+<body>
+	<main>
+		<div class="container">
+			<div class="inline">
+				<label for="naik">Naik</label>
+				<input type="number" placeholder="masukan angka" id="naik">
+				<label for="turun">Turun</label>
+				<input type="number" placeholder="masukan angka" id="turun">
+			</div>
+			<label for="hasil">Hasil</label>				
+			<textarea name="hasil" id="hasil" cols="24" rows="5"></textarea>
+		</div>
+	</main>
+	<footer>&copy RIVAL</footer>
+</body>
+	<script>
+	const naik = document.getElementById('naik');
+	const turun = document.getElementById('turun');
+	let hasil = document.querySelector('#hasil');
+		
+	naik.addEventListener('keyup', function () {
+		document.getElementById('turun').value = '';
+		hasil = Math.round(Number(naik.value) * 1.618);
+		hasil.innerText = hasil;
+	});	
+
+	turun.addEventListener('keyup', function () {
+		document.getElementById('naik').value = '';
+		hasil = Math.round(Number(turun.value) * 1.618 - Number(turun.value));
+		hasil.innerText = hasil;
+	});
+	</script>
+</html>
