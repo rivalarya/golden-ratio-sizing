@@ -65,20 +65,22 @@
 	<footer>&copy RIVAL</footer>
 </body>
 	<script>
-	const naik = document.getElementById('naik');
-	const turun = document.getElementById('turun');
-	let hasil = document.querySelector('#hasil');
+	const inputNaik = document.getElementById('naik');
+	const inputTurun = document.getElementById('turun');
+	const textareaHasil = document.querySelector('#hasil');
 		
-	naik.addEventListener('keyup', function () {
-		document.getElementById('turun').value = '';
-		hasil = Math.round(Number(naik.value) * 1.618);
-		hasil.innerText = hasil;
+	inputNaik.addEventListener('keyup', function () {
+  	const inputNaikValue = Number(inputNaik.value);
+		inputTurun.value = '';
+		const result = Math.round(inputNaikValue * 1.618);
+		textareaHasil.innerText = result;
 	});	
 
-	turun.addEventListener('keyup', function () {
-		document.getElementById('naik').value = '';
-		hasil = Math.round(Number(turun.value) * 1.618 - Number(turun.value));
-		hasil.innerText = hasil;
+	inputTurun.addEventListener('keyup', function () {
+  	const inputTurunValue = Number(inputTurun.value);
+		inputNaik.value = '';
+		const result = Math.round(inputTurunValue * 1.618 - inputTurunValue);
+		textareaHasil.innerText = result;
 	});
 	</script>
 </html>
